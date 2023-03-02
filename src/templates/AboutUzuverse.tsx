@@ -1,8 +1,9 @@
 import { InView } from 'react-intersection-observer';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Android from '../assets/images/Android.png';
 import IPhone from '../assets/images/IPhone.png';
 import { BottomContentFont, TitleFone, TopContentFont } from './common/ContentFontTemplates';
+import { fadeIn } from './common/FadeAnimation';
 
 const Item = ({ count, whiteFont, blueFont }: { count: number; whiteFont: string; blueFont: string }) => {
   return (
@@ -49,6 +50,14 @@ const Wrapper = styled.div<{ active: boolean }>`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  ${({ active }) =>
+    active
+      ? css`
+          animation: ${fadeIn} 0.8s linear;
+        `
+      : css`
+          opacity: 0;
+        `}
 `;
 
 const LeftContent = styled.div`

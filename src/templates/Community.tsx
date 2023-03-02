@@ -1,17 +1,18 @@
 import { InView } from 'react-intersection-observer';
-import styled from 'styled-components';
-import discord from '../assets/images/logos/discord.svg';
-import facebook from '../assets/images/logos/facebook.svg';
-import linkedin from '../assets/images/logos/linkedin.svg';
-import twitter from '../assets/images/logos/twitter.svg';
+import styled, { css } from 'styled-components';
+import Haha from '../assets/images/haha.png';
 import { BottomContentFont, TitleFone, TopContentFont } from './common/ContentFontTemplates';
+import { fadeIn } from './common/FadeAnimation';
+import LogoTemplete from './common/LogoTemplete';
 
 const Community = () => {
   return (
     <InView>
       {({ inView, ref, entry }) => (
         <Wrapper ref={ref} active={inView}>
-          <LeftContent></LeftContent>
+          <LeftContent>
+            <Image src={Haha} alt='haha' />
+          </LeftContent>
           <RightContent>
             <TitleFone>Community</TitleFone>
             <TopContentFont>Join our Community Social activities make money</TopContentFont>
@@ -30,12 +31,7 @@ const Community = () => {
                 </li>
               </ul>
             </BottomContentFont>
-            <LogoContainer>
-              <img src={discord} alt='discord' />
-              <img src={facebook} alt='facebook' />
-              <img src={linkedin} alt='linkedin' />
-              <img src={twitter} alt='twitter' />
-            </LogoContainer>
+            <LogoTemplete />
           </RightContent>
         </Wrapper>
       )}
@@ -48,6 +44,14 @@ const Wrapper = styled.div<{ active: boolean }>`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  ${({ active }) =>
+    active
+      ? css`
+          animation: ${fadeIn} 0.8s linear;
+        `
+      : css`
+          opacity: 0;
+        `}
 `;
 
 const LeftContent = styled.div`
@@ -55,7 +59,7 @@ const LeftContent = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   align-items: flex-start;
-  width: 35vw;
+  width: 40vw;
 `;
 const RightContent = styled.div`
   width: 50vw;
@@ -64,14 +68,9 @@ const RightContent = styled.div`
   flex-direction: column;
 `;
 
-const LogoContainer = styled.div`
-  display: flex;
-  margin-top: 46px;
-  gap: 20px;
-  & > img {
-    cursor: pointer;
-    width: 24px;
-    height: 24px;
-  }
+const Image = styled.img`
+  object-fit: contain;
+  width: 100%;
 `;
+
 export default Community;

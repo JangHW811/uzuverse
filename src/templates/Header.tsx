@@ -1,7 +1,7 @@
 import { InView } from 'react-intersection-observer';
 import styled, { css } from 'styled-components';
 import BackgroundImage from '../assets/images/banner-background.svg';
-import { fadeIn, fadeOut } from './common/FadeAnimation';
+import { fadeIn } from './common/FadeAnimation';
 
 const Header = () => {
   return (
@@ -51,7 +51,7 @@ const Container = styled.div<{ active: boolean }>`
           animation: ${fadeIn} 0.8s linear;
         `
       : css`
-          animation: ${fadeOut} 0.8s linear;
+          opacity: 0;
         `}
 `;
 
