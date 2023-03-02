@@ -30,9 +30,9 @@ const Roadmap = () => {
           <RightContent>
             <ItemGrid>
               <Item icon={People} topFont='UZUVERSE Launching' bottomFont='gather and spread content' />
-              <Item icon={Wallet} topFont='UZUVERSE Launching' bottomFont='gather and spread content' />
-              <Item icon={Palette} topFont='UZUVERSE Launching' bottomFont='gather and spread content' />
-              <Item icon={Label} topFont='UZUVERSE Launching' bottomFont='gather and spread content' />
+              <Item icon={Wallet} topFont='Governance DAO' bottomFont='Run a community-based advertisement pool' />
+              <Item icon={Palette} topFont='UZU LIVE Feature' bottomFont='Add cool live features' />
+              <Item icon={Label} topFont='Sell NFTs' bottomFont='NFT membership to be released' />
             </ItemGrid>
           </RightContent>
         </Wrapper>
@@ -88,7 +88,7 @@ const ItemContainer = styled.div`
   justify-content: center;
   border: 1px solid #f2f2f2;
   border-radius: 8px;
-  padding: 40px 12px;
+  padding: 40px 12px 12px;
   transition: all 0.3s ease-in-out;
   :hover {
     background: #3649d2;
@@ -115,5 +115,6 @@ const ItemBottomFont = styled.div`
   line-height: 24px;
   color: #f2f2f2;
   text-align: center;
+  word-break: keep-all;
 `;
 export default Roadmap;
