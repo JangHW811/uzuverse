@@ -62,7 +62,7 @@ const LeftContent = styled.div`
   width: 40vw;
 `;
 const RightContent = styled.div`
-  width: 50vw;
+  width: 45vw;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
@@ -71,6 +71,7 @@ const RightContent = styled.div`
 const Image = styled.img`
   object-fit: contain;
   width: 100%;
+  max-height: 60vh;
 `;
 
 export default Community;

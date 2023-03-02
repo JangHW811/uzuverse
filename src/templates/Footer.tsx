@@ -8,47 +8,56 @@ const Footer = () => {
   return (
     <InView>
       {({ inView, ref, entry }) => (
-        <Container active={inView} ref={ref}>
-          <MenuGrid>
-            <Column>
-              <UzuverseFont>• UZUVERSE</UzuverseFont>
-              <HorizontalBlank height={30} />
-              <SmallFont>would you verse?</SmallFont>
-              <HorizontalBlank height={26} />
-              <LogoTemplete />
-            </Column>
-            <div>
-              <MiddleFont>Information</MiddleFont>
-              <HorizontalBlank height={20} />
-              <MenuContainer>
-                <SmallFont>{'> Collection'}</SmallFont>
-                <SmallFont>{'> How to Mint'}</SmallFont>
-                <SmallFont>{'> Community'}</SmallFont>
-                <SmallFont>{'> Call Center'}</SmallFont>
-              </MenuContainer>
-            </div>
-            <div>
-              <MiddleFont>Pages</MiddleFont>
-              <HorizontalBlank height={20} />
-              <MenuContainer>
-                <SmallFont>{'> Home'}</SmallFont>
-                <SmallFont>{'> About Us'}</SmallFont>
-                <SmallFont>{'> Services'}</SmallFont>
-                <SmallFont>{'> Testimonial'}</SmallFont>
-              </MenuContainer>
-            </div>
-            <div>
-              <MiddleFont>Support</MiddleFont>
-              <HorizontalBlank height={20} />
-              <MenuContainer>
-                <SmallFont>{'> About Ove'}</SmallFont>
-                <SmallFont>{'> About NFT'}</SmallFont>
-                <SmallFont>{'> FAQ'}</SmallFont>
-                <SmallFont>{'> Help'}</SmallFont>
-              </MenuContainer>
-            </div>
-          </MenuGrid>
-        </Container>
+        <div>
+          <Container active={inView} ref={ref}>
+            <MenuGrid>
+              <Column>
+                <UzuverseFont>• UZUVERSE</UzuverseFont>
+                <HorizontalBlank height={30} />
+                <SmallFont>would you verse?</SmallFont>
+                <HorizontalBlank height={26} />
+                <LogoTemplete />
+              </Column>
+              <LeftContainer>
+                <MiddleFont>Information</MiddleFont>
+                <HorizontalBlank height={20} />
+                <MenuContainer>
+                  <SmallFont>{'> Collection'}</SmallFont>
+                  <SmallFont>{'> How to Mint'}</SmallFont>
+                  <SmallFont>{'> Community'}</SmallFont>
+                  <SmallFont>{'> Call Center'}</SmallFont>
+                </MenuContainer>
+              </LeftContainer>
+              <MiddleContainer>
+                <MiddleFont>Pages</MiddleFont>
+                <HorizontalBlank height={20} />
+                <MenuContainer>
+                  <SmallFont>{'> Home'}</SmallFont>
+                  <SmallFont>{'> About Us'}</SmallFont>
+                  <SmallFont>{'> Services'}</SmallFont>
+                  <SmallFont>{'> Testimonial'}</SmallFont>
+                </MenuContainer>
+              </MiddleContainer>
+              <RightContainer>
+                <MiddleFont>Support</MiddleFont>
+                <HorizontalBlank height={20} />
+                <MenuContainer>
+                  <SmallFont>{'> About Ove'}</SmallFont>
+                  <SmallFont>{'> About NFT'}</SmallFont>
+                  <SmallFont>{'> FAQ'}</SmallFont>
+                  <SmallFont>{'> Help'}</SmallFont>
+                </MenuContainer>
+              </RightContainer>
+            </MenuGrid>
+          </Container>
+          <BottomContent>
+            <Row>
+              <SmallFont>Terms & Condition</SmallFont>
+              <SmallFont>Privacy & Policy</SmallFont>
+            </Row>
+            <SmallFont> © 2022 UZUVERSE All Rights Reserved</SmallFont>
+          </BottomContent>
+        </div>
       )}
     </InView>
   );
@@ -91,11 +100,24 @@ const UzuverseFont = styled.div`
 const MenuGrid = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: 4fr 3fr 3fr 3fr;
+  grid-template-columns: 5fr 3fr 3fr 3fr;
   & > div {
     display: flex;
     flex-direction: column;
   }
+`;
+
+const MiddleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const LeftContainer = styled(MiddleContainer)`
+  align-items: flex-start;
+`;
+const RightContainer = styled(MiddleContainer)`
+  align-items: flex-end;
 `;
 
 const MiddleFont = styled.div`
@@ -110,5 +132,21 @@ const SmallFont = styled.div`
   font-size: 14px;
   line-height: 21px;
   color: #ffffff;
+`;
+
+const BottomContent = styled.div`
+  box-sizing: border-box;
+  height: 82px;
+  background-color: #3649d2;
+  width: 100%;
+  padding: 0 140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const Row = styled.div`
+  display: flex;
+  gap: 50px;
 `;
 export default Footer;
