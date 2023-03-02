@@ -92,7 +92,7 @@ const ItemContainer = styled.div`
   transition: all 0.3s ease-in-out;
   :hover {
     background: #3649d2;
-    border: 0;
+    border: 1px solid #3649d2;
   }
   & > img {
     width: 70px;
