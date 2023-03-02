@@ -28,7 +28,7 @@ const BannerSlider = () => {
   return (
     <Slider {...settings}>
       {IMAGE_LIST.map((image, index) => (
-        <SlickImageContainer>
+        <SlickImageContainer key={index}>
           <SlickImage src={image} alt={`banner${index + 1}`} />
         </SlickImageContainer>
       ))}
