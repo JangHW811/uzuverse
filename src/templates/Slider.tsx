@@ -42,8 +42,8 @@ const SlickImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
-  margin: 10px;
+  height: 30px;
+  margin: 20px 50px;
   position: relative;
   @media screen and (max-width: 768px) {
     height: 30px;
