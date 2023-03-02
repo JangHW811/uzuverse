@@ -3,6 +3,7 @@ import discord from '../../assets/images/logos/discord.svg';
 import facebook from '../../assets/images/logos/facebook.svg';
 import linkedin from '../../assets/images/logos/linkedin.svg';
 import twitter from '../../assets/images/logos/twitter.svg';
+import media from '../../constants/media';
 
 const LogoTemplete = () => {
   return (
@@ -17,12 +18,15 @@ const LogoTemplete = () => {
 
 const LogoContainer = styled.div`
   display: flex;
-  margin-top: 46px;
   gap: 20px;
   & > img {
     cursor: pointer;
     width: 24px;
     height: 24px;
+    ${media.MOBILE} {
+      width: 15px;
+      height: 15px;
+    }
   }
 `;
 export default LogoTemplete;

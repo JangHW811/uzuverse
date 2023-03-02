@@ -4,6 +4,7 @@ import Chart from '../assets/images/logos/chart.svg';
 import Medal from '../assets/images/logos/medal.svg';
 import Smile from '../assets/images/logos/smile.svg';
 import People from '../assets/images/People.png';
+import media from '../constants/media';
 import { BottomContentFont, TitleFone, TopContentFont } from './common/ContentFontTemplates';
 import { fadeIn } from './common/FadeAnimation';
 
@@ -50,6 +51,8 @@ const Wrapper = styled.div<{ active: boolean }>`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 30px 0;
   ${({ active }) =>
     active
       ? css`
@@ -66,12 +69,20 @@ const LeftContent = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 30vw;
+  min-width: 300px;
+  ${media.MOBILE} {
+    width: calc(100% - 50px);
+  }
 `;
 const RightContent = styled.div`
   width: 50vw;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+  min-width: 300px;
+  ${media.MOBILE} {
+    width: calc(100% - 50px);
+  }
 `;
 
 const Image = styled.img`
@@ -89,26 +100,43 @@ const ItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 45px;
-  & > img {
+  ${media.MOBILE} {
+    margin-top: 27px;
+  }
+  & > div > img {
     width: 45px;
     height: 45px;
+    ${media.MOBILE} {
+      width: 23px;
+      height: 23px;
+    }
   }
 `;
 
 const Row = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
 `;
 const ItemNumberFont = styled.div`
   font-weight: 700;
   font-size: 38px;
   line-height: 52px;
   color: #ffffff;
+  margin-left: 4px;
+  ${media.MOBILE} {
+    font-size: 26px;
+    line-height: 26px;
+  }
 `;
 const ItemBottomFont = styled.div`
   font-weight: 500;
   font-size: 16px;
   line-height: 52px;
   color: #f2f2f2;
+  ${media.MOBILE} {
+    font-size: 12px;
+    line-height: 26px;
+  }
 `;
 export default CallaborateWithUs;

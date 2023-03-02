@@ -43,6 +43,10 @@ const SlickImageContainer = styled.div`
   height: 20px;
   margin: 50px;
   position: relative;
+  @media screen and (max-width: 768px) {
+    height: 12px;
+    margin: 25px;
+  }
 `;
 
 const SlickImage = styled.img`

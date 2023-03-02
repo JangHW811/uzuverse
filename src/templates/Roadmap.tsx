@@ -5,8 +5,10 @@ import Palette from '../assets/images/logos/palette.svg';
 import People from '../assets/images/logos/people.svg';
 import Wallet from '../assets/images/logos/wallet.svg';
 import RoadmapImage from '../assets/images/roadmap-image.png';
+import media from '../constants/media';
 import { TitleFone, TopContentFont } from './common/ContentFontTemplates';
 import { fadeIn } from './common/FadeAnimation';
+
 const Item = ({ icon, topFont, bottomFont }: { icon: string; topFont: string; bottomFont: string }) => {
   return (
     <ItemContainer>
@@ -46,6 +48,7 @@ const Wrapper = styled.div<{ active: boolean }>`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
   ${({ active }) =>
     active
       ? css`
@@ -62,16 +65,28 @@ const LeftContent = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 35vw;
+  min-width: 300px;
+  ${media.MOBILE} {
+    width: calc(100% - 50px);
+  }
 `;
 const RightContent = styled.div`
   width: 35vw;
   display: flex;
   justify-content: flex-end;
+  min-width: 300px;
+  ${media.MOBILE} {
+    width: calc(100% - 50px);
+  }
 `;
 
 const Image = styled.img`
   width: 120%;
   object-fit: contain;
+  ${media.MOBILE} {
+    margin-top: 40px;
+    width: 90%;
+  }
 `;
 
 const ItemGrid = styled.div`
@@ -79,6 +94,9 @@ const ItemGrid = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 16px;
+  ${media.MOBILE} {
+    grid-gap: 10px;
+  }
 `;
 
 const ItemContainer = styled.div`
@@ -97,6 +115,10 @@ const ItemContainer = styled.div`
   & > img {
     width: 70px;
     height: 70px;
+    ${media.MOBILE} {
+      width: 46px;
+      height: 46px;
+    }
   }
 `;
 
@@ -107,6 +129,11 @@ const ItemTopFont = styled.div`
   line-height: 33px;
   color: #f6f6f6;
   text-align: center;
+  ${media.MOBILE} {
+    font-size: 18px;
+    line-height: 27px;
+    margin-top: 10px;
+  }
 `;
 const ItemBottomFont = styled.div`
   margin-top: 24px;
@@ -116,5 +143,10 @@ const ItemBottomFont = styled.div`
   color: #f2f2f2;
   text-align: center;
   word-break: keep-all;
+  ${media.MOBILE} {
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 20px;
+  }
 `;
 export default Roadmap;
