@@ -12,8 +12,9 @@ const Header = () => {
     <InView>
       {({ inView, ref, entry }) => (
         <Container ref={ref} active={inView}>
+          {isMobile || 'UZUVERSE'}
           <Content>
-            UZUVERSE
+            {isMobile && 'UZUVERSE'}
             <TopFont>Community Platform & NFT</TopFont>
             <MiddleFont>
               UZUVERSE aims to realize
