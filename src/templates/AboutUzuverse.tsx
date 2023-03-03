@@ -102,11 +102,12 @@ const PhoneContainer = styled.div`
   }
 
   & > div {
+    /* width: fit-content; */
     & > img {
       object-fit: contain;
       height: 100%;
+      width: 100%;
       ${media.MOBILE} {
-        width: 100%;
         height: auto;
         flex: 1;
         display: flex;
